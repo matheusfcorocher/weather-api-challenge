@@ -1,9 +1,10 @@
-from flask import Flask, jsonify
+from flask import jsonify
 
+from server import start_server
 from swagger import create_swagger_docs
 from database import connect_to_database
 
-app = Flask(__name__)
+app = start_server()
 create_swagger_docs(app)
 connect_to_database()
 
