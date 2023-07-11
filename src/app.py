@@ -1,15 +1,11 @@
 from flask import Flask, jsonify
-from pymongo import MongoClient
 
 from swagger import create_swagger_docs
+from database import connect_to_database
 
 app = Flask(__name__)
 create_swagger_docs(app)
-
-# Connect to MongoDB
-client = MongoClient("mongo", 27017)
-db = client["mydatabase"]
-collection = db["mycollection"]
+connect_to_database()
 
 # Routes
 @app.route('/')
