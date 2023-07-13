@@ -1,6 +1,6 @@
 # weather-api-challenge
 
-This repo is a solution for requirements of this <a href="https://github.com/somarmeteorologia/challenge/blob/master/backend/README.md">Somarmeteorologia's backend project</a>.
+This repo is a solution for requirements of this `<a href="https://github.com/somarmeteorologia/challenge/blob/master/backend/README.md">`Somarmeteorologia's backend project `</a>`.
 
 ## Features
 
@@ -37,7 +37,7 @@ This repo is a solution for requirements of this <a href="https://github.com/som
 
 ## Quick start
 
-0. Do you need  <a href="https://docs.docker.com/get-docker"/>Docker</a> installed in your machine.
+0. Do you need  `<a href="https://docs.docker.com/get-docker"/>`Docker `</a>` installed in your machine.
 1. Clone the repository with `git clone https://github.com/matheusfcorocher/weather-api-challenge.git`
 2. Go to repository directory `cd weather-api-challenge`
 3. Run `docker compose up`
@@ -53,3 +53,4 @@ This api comes with a collection of commands that you can run:
 
 - `docker compose up --build tests`: Run tests with pytest
 - `docker compose down`: Shutdown docker containers
+- `docker exec weather-api python3 src/database/seed_with_json_files.py `: It will trigger the seeding process and populate the MongoDB database with the desired data
