@@ -2,11 +2,11 @@ from flask import jsonify
 
 from server import start_server
 from swagger import create_swagger_docs
-from database import connect_to_database
+from database.database_connection import mongo_connection
 
 app = start_server()
 create_swagger_docs(app)
-connect_to_database()
+mongo_connection
 
 # Routes
 @app.route('/')
