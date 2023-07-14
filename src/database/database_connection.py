@@ -8,9 +8,9 @@ class MongoConnection:
             cls._instance = super().__new__(cls)
         return cls._instance
 
-    def __init__(self, port=27017):
+    def __init__(self, mongo_client, port=27017):
         if not hasattr(self, 'client'):
-            self.client = MongoClient("mongo", port)
+            self.client = mongo_client("mongo", port)
 
     def get_connection(self):
         return self.client
@@ -20,4 +20,4 @@ class MongoConnection:
 
 
 # Create an instance of the MongoDB connection
-mongo_connection = MongoConnection()
+mongo_connection = MongoConnection(mongo_client = MongoClient)
