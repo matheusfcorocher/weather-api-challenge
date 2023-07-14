@@ -18,7 +18,7 @@ class MongoConnection:
     def get_weather_db(self):
         return self.client["weather"]
     
-    def __exit__(self):
+    def __del__(self):
         self.client.close()
 
 
