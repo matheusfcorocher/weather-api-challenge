@@ -17,10 +17,6 @@ class MongoConnection:
     
     def get_weather_db(self):
         return self.client["weather"]
-    
-    def __del__(self):
-        self.client.close()
-
 
 # Create an instance of the MongoDB connection
 mongo_connection = MongoConnection(mongo_client = MongoClient)
