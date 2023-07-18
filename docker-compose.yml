@@ -1,7 +1,10 @@
 version: "3.9"
 services:
-  web:
-    build: .
+  web-server:
+    build:
+      context: .
+      dockerfile: ./docker/web-server/Dockerfile
+    container_name: weather-api
     ports:
       - "5000:5000"
     volumes:
@@ -12,13 +15,14 @@ services:
       FLASK_DEBUG: "true"
   mongo:
     image: mongo
-    restart: always
     ports:
      - "27017:27017"
     volumes:
      - mongoDB-data:/data/db
   tests:
-    build: .
+    build:
+      context: .
+      dockerfile: ./docker/web-server/Dockerfile
     volumes:
       - .:/src/build
     command: pytest --capture=no
