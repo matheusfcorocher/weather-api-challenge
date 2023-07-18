@@ -53,4 +53,4 @@ This api comes with a collection of commands that you can run:
 
 - `docker compose up --build tests`: Run tests with pytest
 - `docker compose down`: Shutdown docker containers
-- `docker exec weather-api python3 src/database/seed_with_json_files.py `: It will trigger the seeding process and populate the MongoDB database with the desired data
+- `docker exec weather-api python3 src/database/run_seed_json_files.py `: It will trigger the seeding process and populate the MongoDB database with the desired data
