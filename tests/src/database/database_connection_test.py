@@ -20,17 +20,8 @@ class Test_database_connection:
         """
             Fixture to initiate a instance of MongoConnection.
         """
-
-        connection = MongoConnection(mongo_client=MongoClient)
-
-        # After each test, closes connection fixture
-        def fin():
-            connection.__del__()
-
-        request.addfinalizer(fin)
-
-        return connection
-
+        
+        return MongoConnection(mongo_client=MongoClient)
 
 
     def test_get_connection(self, mongo_connection):
