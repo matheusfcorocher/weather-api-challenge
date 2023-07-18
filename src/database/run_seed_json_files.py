@@ -2,6 +2,7 @@ import json
 import os
 
 from database_connection import mongo_connection
+from seed_with_json_files import make_seed_mongo_database_with_json_files
 
 db = mongo_connection.get_weather_db()
 collection = db["weather"]
